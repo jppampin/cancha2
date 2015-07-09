@@ -1,10 +1,9 @@
 <div layout="vertical" layout-fill>
 
-  <md-content>
+  <md-content layout-fill>
     <header>
       <acme-navbar creationDate="main.creationDate" />
     </header>
-
     <section class="jumbotron">
       <h1>La cancha de tu hermana</h1>
       <p>
@@ -12,17 +11,8 @@
       </p>
     </section>
     <div ui-view></div>
-    <div class="techs" layout-align="center">
-      <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-        <div class="thumbnail">
-          <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-          <div class="caption">
-            <h3>{{ awesomeThing.title }}</h3>
-            <p>{{ awesomeThing.description }}</p>
-            <p><a ng-href="{{ awesomeThing.url }}">{{ awesomeThing.url }}</a></p>
-          </div>
-        </div>
-      </md-card>
+    <div>
+    <cancha-list />
     </div>
   </md-content>
 

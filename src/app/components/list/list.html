@@ -1,0 +1,14 @@
+<md-content layout="row" layout-align="center center" flex>
+  <md-list flex="50" flex-sm>
+    <md-list-item class="md-3-line" ng-repeat="player in vm.players" flex>
+       <img ng-src="http://www.gravatar.com/avatar/11f1e85cd4b673a843d0365a50645b31" class="md-avatar" alt="jpp" />
+        <div class="md-list-item-text">
+          <h3>{{player.name}}</h3>
+          <h4>{{player.email}}</gmail></h4>
+          <p>{{player.comment}}</p>
+        </div>
+        <md-switch ng-model="player.checked" aria-label="">
+        </md-switch>
+    </md-list-item>
+  </md-list>
+</md-content>

@@ -12,7 +12,7 @@
       scope: {
         extraValues: '=',
       },
-      template: '&nbsp;',
+      template: 'HOLA MUNDO!&nbsp;',
       link: linkFunc,
       controller: MalarkeyController,
       controllerAs: 'vm'
