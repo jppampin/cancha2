@@ -19,7 +19,14 @@
         templateUrl: 'app/login/login.html',
         controller: 'LoginController',
         controllerAs: 'login'
+      })
+      .state('main.admPartido', {
+        url: '/admPartido',
+        templateUrl: 'app/admPartido/admPartido.html',
+        controller: 'AdmPartidoController',
+        controllerAs: 'admPartido'
       });
+
 
     $urlRouterProvider.otherwise('/');
   }

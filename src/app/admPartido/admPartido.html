@@ -1,0 +1,13 @@
+<div layout="row" layout-fill layout-align="center">
+  <md-card layout-padding flex="30" flex-sm>
+    <form layout="column" name="partidoForm">
+      <md-input-container >
+        <label>Titulo:</label><input name="title" required />
+         <div ng-messages="partidoForm.title.$error">
+          <div ng-message="required">El titulo es requerido</div>
+         </div>
+      </md-input-container>
+      <md-button class="md-primary md-raised" >Crear</md-button>
+    </form>
+  </md-card>
+</div>

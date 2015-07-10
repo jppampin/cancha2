@@ -6,9 +6,12 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastr) {
+  function config($logProvider, toastr, $mdThemingProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
+
+    $mdThemingProvider.theme('default')
+      .primaryPalette('teal');
 
     // Set options third-party lib
     toastr.options.timeOut = 3000;

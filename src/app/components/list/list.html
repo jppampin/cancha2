@@ -1,13 +1,17 @@
-<md-content layout="row" layout-align="center center" flex>
+<md-content layout="row" layout-align="center center">
   <md-list flex="50" flex-sm>
-    <md-list-item class="md-3-line" ng-repeat="player in vm.players" flex>
+    <md-toolbar flex="50" flex-sm class="md-padding">
+    <h2>Lista de Inscriptos:</h3>
+    </md-toolbar>
+    <md-list-item class="md-3-line unselected" ng-repeat="player in vm.players | orderBy: 'confirm'" ng-class="{ selected : player.confirm}">
        <img ng-src="http://www.gravatar.com/avatar/11f1e85cd4b673a843d0365a50645b31" class="md-avatar" alt="jpp" />
-        <div class="md-list-item-text">
-          <h3>{{player.name}}</h3>
-          <h4>{{player.email}}</gmail></h4>
+        <div class="md-list-item-text" >
+          <h3>{{player.name}} <md-chip>10</md-chip> </h3>
+          <h4>{{player.email}}</h4>
           <p>{{player.comment}}</p>
         </div>
-        <md-switch ng-model="player.checked" aria-label="">
+          <md-switch ng-model="player.confirm" ng-click="vm.update(player)"></md-switch>
+          <md-icon md-svg-src="assets/images/checkbox-marked-circle.svg" href="/facebook" ng-if="player.confirm"></md-icon>
         </md-switch>
     </md-list-item>
   </md-list>
