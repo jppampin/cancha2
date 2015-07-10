@@ -20,15 +20,13 @@
         controller: 'LoginController',
         controllerAs: 'login'
       })
-<<<<<<< HEAD
+
       .state('main.forgotPassword', {
         url: '/forgotPassword',
         templateUrl: 'app/forgotPassword/forgotPassword.html',
         controller: 'ForgotPasswordController',
         controllerAs: 'forgotPassword'
       })      
-=======
->>>>>>> f1f2858f455d679d636fb2386fe5dc7b185789c3
       .state('main.admPartido', {
         url: '/admPartido',
         templateUrl: 'app/admPartido/admPartido.html',
