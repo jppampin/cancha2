@@ -11,6 +11,6 @@
 
     vm.request = function(){
       toastr.info('Recuperando password de:' + vm.email);
-    }
+    };
   }
 })();

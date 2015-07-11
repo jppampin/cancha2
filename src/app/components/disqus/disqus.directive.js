@@ -20,7 +20,6 @@
 
     /** @ngInject */
     function DisqusController() {
-      var vm = this;
     }
   }
 

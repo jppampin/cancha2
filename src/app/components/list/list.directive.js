@@ -30,7 +30,7 @@
       ];
       vm.update = function(player){
         toastr.info('Player ' + player.name + ' UPDATED!' );
-      }
+      };
     }
   }
 

@@ -6,8 +6,7 @@
     .controller('AdmPartidoController', AdmPartidoController);
 
   /** @ngInject */
-  function AdmPartidoController($timeout, webDevTec, toastr) {
-    var vm = this;
+  function AdmPartidoController() {
           
   }
 })();
