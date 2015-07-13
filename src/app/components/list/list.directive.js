@@ -23,8 +23,8 @@
       var vm = this;
 
       vm.players = [
-        { 'name' : 'JPP', 'email' : 'jppampin@gmail.com', 'comment': 'First User'},
-        { 'name' : 'JPP2', 'email' : 'jppampin@gmail.com', 'comment': 'Second User'},
+        { 'name' : 'JPP', 'email' : 'jppampin@gmail.com', 'comment': 'First User', 'confirm' : false},
+        { 'name' : 'JPP2', 'email' : 'jppampin@gmail.com', 'comment': 'Second User', 'confirm': false},
         { 'name' : 'JPP3', 'email' : 'jppampin@gmail.com', 'comment': 'Third User', 'confirm' : true},
         { 'name' : 'JPP4', 'email' : 'jppampin@gmail.com', 'comment': 'Fourth User', 'confirm': true}
       ];
