@@ -26,12 +26,18 @@
         templateUrl: 'app/forgotPassword/forgotPassword.html',
         controller: 'ForgotPasswordController',
         controllerAs: 'forgotPassword'
-      })      
+      })
       .state('main.admPartido', {
         url: '/admPartido',
         templateUrl: 'app/admPartido/admPartido.html',
         controller: 'AdmPartidoController',
         controllerAs: 'admPartido'
+      })
+      .state('main.register', {
+        url: '/register',
+        templateUrl: 'app/register/register.html',
+        controller: 'RegisterController',
+        controllerAs: 'vm'
       });
 
 

@@ -7,10 +7,17 @@
       <md-input-container>
         <label>Password</label><input type="password" />
       </md-input-container>
+      <div layout="row" layout-align="center center">
+      <div flex>
+      <a ui-sref="main.register">Inscribirse</a>
+      </div>
+      <div flex>
       <a ui-sref="main.forgotPassword">Olvidaste la password</a>
+      </div>
+      </div>
         <md-button class="md-primary md-raised" >Login</md-button>
         or
-        <md-button class="md-fab md-mini"> 
+        <md-button class="md-fab md-mini">
           <md-icon md-svg-src="assets/images/facebook.svg" href="/facebook"></md-icon>
         </md-button>
     </form>

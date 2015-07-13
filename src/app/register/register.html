@@ -1,0 +1,23 @@
+<div layout="row" layout-fill layout-align="center">
+  <md-card layout-padding flex="30" flex-sm>
+    <form layout="column">
+      <md-input-container>
+        <label>Name:</label><input ng-model="vm.user.name" />
+      </md-input-container>
+      <md-input-container>
+        <label>Email:</label><input ng-model="vm.user.email"/>
+      </md-input-container>
+
+      <md-input-container>
+        <label>Username</label><input ng-model="vm.user.username" />
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label><input type="password" ng-model="vm.user.password" />
+      </md-input-container>
+      <md-input-container>
+        <label>Confirm Password</label><input type="password" ng-model="vm.user.confirmPassword" />
+      </md-input-container>
+      <md-button class="md-primary md-raised" ng-click="vm.register(vm.user);" >Register</md-button>
+    </form>
+  </md-card>
+</div>
