@@ -7,6 +7,9 @@
 
   /** @ngInject */
   function AdmPartidoController() {
-          
+    var vm = this;
+    vm.match = {
+      'title' : 'pepe'
+    };
   }
 })();

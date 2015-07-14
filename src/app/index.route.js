@@ -31,7 +31,7 @@
         url: '/admPartido',
         templateUrl: 'app/admPartido/admPartido.html',
         controller: 'AdmPartidoController',
-        controllerAs: 'admPartido'
+        controllerAs: 'vm'
       })
       .state('main.register', {
         url: '/register',

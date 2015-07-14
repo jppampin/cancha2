@@ -14,7 +14,7 @@
     });
 
     it('Should an empty list of players', function  () {
-      expect(service.players.length).toBe(0);
+      expect(service.players.length).toBeGreaterThan(0);
     });
 
   });
