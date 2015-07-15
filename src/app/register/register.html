@@ -1,21 +1,37 @@
 <div layout="row" layout-fill layout-align="center">
   <md-card layout-padding flex="30" flex-sm>
-    <form layout="column">
+    <form layout="column" name="registerForm">
       <md-input-container>
-        <label>Name:</label><input ng-model="vm.user.name" />
+        <label>Name:</label><input name="name" ng-model="vm.user.name" required />
+        <div ng-messages="registerForm.name.$error">
+          <div ng-message="required">Requerido</div>
+        </div>
       </md-input-container>
       <md-input-container>
-        <label>Email:</label><input ng-model="vm.user.email"/>
+        <label>Email:</label><input type="email" name="email" email required ng-model="vm.user.email"/>
+        <div ng-messages="registerForm.email.$error">
+          <div ng-message="required">Requerido</div>
+          <div ng-message="email">Ingrese un email válido</div>
+        </div>
       </md-input-container>
 
       <md-input-container>
-        <label>Username</label><input ng-model="vm.user.username" />
+        <label>Username</label><input name="username" ng-model="vm.user.username" required />
+        <div ng-messages="registerForm.username.$error">
+          <div ng-message="required">Requerido</div>
+        </div>
       </md-input-container>
       <md-input-container>
-        <label>Password</label><input type="password" ng-model="vm.user.password" />
+        <label>Password</label><input type="password" ng-model="vm.user.password" name="password" required />
+        <div ng-messages="registerForm.password.$error">
+          <div ng-message="required">Requerido</div>
+        </div>
       </md-input-container>
       <md-input-container>
-        <label>Confirm Password</label><input type="password" ng-model="vm.user.confirmPassword" />
+        <label>Confirm Password</label><input type="password" ng-model="vm.user.confirmPassword" name="confirmPassword" required />
+        <div ng-messages="registerForm.confirmPassword.$error">
+          <div ng-message="required">Requerido</div>
+        </div>
       </md-input-container>
       <md-button class="md-primary md-raised" ng-click="vm.register(vm.user);" >Register</md-button>
     </form>

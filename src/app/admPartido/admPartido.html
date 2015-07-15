@@ -2,7 +2,7 @@
   <md-card layout-padding flex="30" flex-sm>
     <form layout="column" name="partidoForm">
       <md-input-container>
-        <label>Titulo</label><input name="title" required ng-model="vm.match.title" />
+        <label>Titulo</label><input md-maxlength="30" name="title" required ng-model="vm.match.title" />
         <div ng-messages="partidoForm.title.$error">
           <div ng-message="required">This is required.</div>
         </div>

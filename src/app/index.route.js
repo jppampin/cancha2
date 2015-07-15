@@ -18,14 +18,14 @@
         url: '/login',
         templateUrl: 'app/login/login.html',
         controller: 'LoginController',
-        controllerAs: 'login'
+        controllerAs: 'vm'
       })
 
       .state('main.forgotPassword', {
         url: '/forgotPassword',
         templateUrl: 'app/forgotPassword/forgotPassword.html',
         controller: 'ForgotPasswordController',
-        controllerAs: 'forgotPassword'
+        controllerAs: 'vm'
       })
       .state('main.admPartido', {
         url: '/admPartido',

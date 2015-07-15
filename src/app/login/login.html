@@ -1,11 +1,12 @@
 <div layout="row" layout-fill layout-align="center">
   <md-card layout-padding flex="30" flex-sm>
-    <form layout="column">
+    <form layout="column" name="loginForm">
       <md-input-container>
-        <label>Username</label><input />
+        <label>Username</label><input ng-model="vm.user.username" required />
+
       </md-input-container>
       <md-input-container>
-        <label>Password</label><input type="password" />
+        <label>Password</label><input ng-model="vm.user.password" type="password" required />
       </md-input-container>
       <div layout="row" layout-align="center center">
       <div flex>
@@ -15,7 +16,7 @@
       <a ui-sref="main.forgotPassword">Olvidaste la password</a>
       </div>
       </div>
-        <md-button class="md-primary md-raised" >Login</md-button>
+        <md-button class="md-primary md-raised" ng-click="vm.login()" >Login</md-button>
         or
         <md-button class="md-fab md-mini">
           <md-icon md-svg-src="assets/images/facebook.svg" href="/facebook"></md-icon>

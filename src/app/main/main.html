@@ -12,7 +12,7 @@
     </section>
     <div ui-view></div>
     <div layout="row" class="" layout-align="center center">
-    <md-button class="md-raised md-warn md-hue-2" ng-click="main.addPlayer()">
+    <md-button class="md-raised md-warn md-hue-2" ng-click="main.addPlayer()" ng-if="main.user.isLogged">
     <h3>Agregarme al Partido</h3> </md-button>
     </div>
 

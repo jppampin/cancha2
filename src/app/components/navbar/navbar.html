@@ -3,5 +3,8 @@
     <md-button ui-sref="main" class="md-raised">Home</md-button>
     <md-button ui-sref="main.login" class="md-raised">Login</md-button>
     <md-button ui-sref="main.admPartido" class="md-raised">Adm. Partidos</md-button>
+    <div flex></div>
+    <div layout-padding>{{vm.user.name}}</div>
+    <md-button ng-click="vm.logout()" class="md-raised" ng-if="vm.user.isLogged">Logout</md-button>
   </section>
 </md-toolbar>

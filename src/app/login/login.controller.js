@@ -6,34 +6,17 @@
     .controller('LoginController', LoginController);
 
   /** @ngInject */
-  function LoginController($timeout, webDevTec, toastr) {
+  function LoginController(toastr, userService, $state, $rootScope) {
     var vm = this;
 
-    vm.awesomeThings = [];
-    vm.classAnimation = '';
-    vm.creationDate = 1436457528652;
-    vm.showToastr = showToastr;
+    vm.user = {
+      'username' : '',
+      'password' : ''
+    };
 
-    activate();
-
-    function activate() {
-      getWebDevTec();
-      $timeout(function() {
-        vm.classAnimation = 'rubberBand';
-      }, 4000);
-    }
-
-    function showToastr() {
-      toastr.info('Fork <a href="https://github.com/Swiip/generator-gulp-angular" target="_blank"><b>generator-gulp-angular</b></a>');
-      vm.classAnimation = '';
-    }
-
-    function getWebDevTec() {
-      vm.awesomeThings = webDevTec.getTec();
-
-      angular.forEach(vm.awesomeThings, function(awesomeThing) {
-        awesomeThing.rank = Math.random();
-      });
-    }
+    vm.login = function () {
+      userService.login(vm.user.username, vm.user.password);
+      $state.go('main');
+    };
   }
 })();
