@@ -24,14 +24,17 @@
   };
 
   /** @ngInject */
-  function CanchaListController(toastr, listService) {
+  function CanchaListController(toastr, listService, userService) {
     var vm = this;
 
     vm.players = listService.players;
+    vm.update = update;
+    vm.user = userService.currentUser;
 
-    vm.update = function(player){
+    function update(player){
       toastr.info('Player ' + player.name + ' UPDATED!' );
     };
+    
   };
 
 

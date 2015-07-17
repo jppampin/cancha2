@@ -7,8 +7,8 @@
 
   /** @ngInject */
   function userService($log, $http) {
-    var anonumousUser = {'username': 'anonymous', 'name' : 'Anonymous', 'email' : '', isLogged: false};
-    var emptyUser =  {'username': '', 'name' : '', 'email' : '', isLogged: false};
+    var anonumousUser = {'username': 'anonymous', 'name' : 'Anonymous', 'email' : '', 'isAdmin': false, 'isLogged': false};
+    var emptyUser =  {'username': '', 'name' : '', 'email' : '', 'isAdmin': false,'isLogged': false};
 
     var service = {
       currentUser: emptyUser,
@@ -26,6 +26,15 @@
         service.currentUser.name = 'JPP';
         service.currentUser.email = 'jppampin@gmail.com';
         service.currentUser.isLogged = true;
+        service.currentUser.isAdmin = true;
+      };
+
+      if(password == 'jpp2'){
+        service.currentUser.username = 'jppampin2';
+        service.currentUser.name = 'JPP - 2';
+        service.currentUser.email = 'jppampin2@gmail.com';
+        service.currentUser.isLogged = true;
+        service.currentUser.isAdmin = false;
       };
     };
 

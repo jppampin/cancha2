@@ -8,10 +8,10 @@
   /** @ngInject */
   function listService($log, $http) {
     var players =  [
-      { 'name' : 'JPP', 'email' : 'jppampin@gmail.com', 'comment': 'First User', 'confirm' : false},
-      { 'name' : 'JPP2', 'email' : 'jppampin@gmail.com', 'comment': 'Second User', 'confirm': false},
-      { 'name' : 'JPP3', 'email' : 'jppampin@gmail.com', 'comment': 'Third User', 'confirm' : true},
-      { 'name' : 'JPP4', 'email' : 'jppampin@gmail.com', 'comment': 'Fourth User', 'confirm': true}
+      { user : {'name' : 'JPP', 'email' : 'jppampin@gmail.com' , 'isAdmin' : true }, 'confirm': false},
+      { user : {'name' : 'JPP2', 'email' : 'jppampin@gmail.com', 'isAdmin ': false }, 'confirm': false},
+      { user : {'name' : 'JPP3', 'email' : 'jppampin@gmail.com', 'isAdmin' : false }, 'confirm': true},
+      { user : {'name' : 'JPP4', 'email' : 'jppampin@gmail.com', 'isAdmin' : false  }, 'confirm': true}
     ];
 
     var service = {

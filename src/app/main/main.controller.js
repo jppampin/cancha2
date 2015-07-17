@@ -9,12 +9,15 @@
   function MainController(toastr, listService, userService) {
     var vm = this;
 
-    vm.addPlayer = function()
+    vm.addPlayer = addPlayer; 
+    vm.user = userService.currentUser;
+
+
+    function addPlayer()
     {
-      var player = { 'name' : 'JPP', 'email' : 'jppampin@gmail.com', 'comment': 'First User', 'confirm' : false};
+      var player = { user : userService.currentUser, 'confirm' : false};
       listService.addPlayer(player);
     };
 
-    vm.user = userService.currentUser;
   }
 })();
