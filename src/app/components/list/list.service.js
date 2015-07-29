@@ -29,11 +29,12 @@
     }
 
     function addPlayer(player) {
-      players.forEach(function(playerListed){
-        if(player.user.local.email === playerListed.user.local.email){
-          return;
-        }
+      var hasPlayer = _.find(players, function(playerListed){
+        return player.user.local.email === playerListed.user.local.email;
       });
+
+      if(hasPlayer)
+        return;
 
       players.push(player);
     }

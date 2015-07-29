@@ -7,7 +7,7 @@
 <!--  Start Confirmados -->
   <section>
   <md-subheader class="md-primary">Confirmados:</md-subheader>
-  <md-list flex layout-wrap layout-gt-sm="row">      
+  <md-list flex layout-wrap layout-gt-sm="row">
     <md-list-item flex="33" class="md-3-line unselected" ng-repeat="player in vm.players | filter: {confirmed: true } " ng-class="{ selected : player.confirmed}">
        <img ng-src="http://www.gravatar.com/avatar/11f1e85cd4b673a843d0365a50645b31" class="md-avatar" alt="jpp" />
         <div class="md-list-item-text" >
@@ -15,28 +15,27 @@
           <h4>{{player.user.local.email}}</h4>
 
         </div>
-          <md-switch ng-model="player.confirmed" ng-click="vm.update(player)" ng-if="vm.user.isAdmin || player.user.local.email == vm.user.username"></md-switch>
+          <md-switch ng-model="player.confirmed" ng-click="vm.canConfirm(player) && vm.update(player)" ng-show="vm.canConfirm(player)" ng-disabled="!vm.canConfirm(player)" ></md-switch>
           <md-icon md-svg-src="assets/images/checkbox-marked-circle.svg" href="/facebook" ng-if="player.confirmed"></md-icon>
         </md-switch>
-    </md-list-item>    
+    </md-list-item>
     </md-list>
   </section>
   <!-- End Confirmados -->
   <!--  Start Pendientes Pendientes-->
   <section>
   <md-subheader class="md-primary">Pendientes:</md-subheader>
-  <md-list flex layout-wrap layout-gt-sm="row">      
-    <md-list-item flex="33" class="md-3-line unselected" ng-repeat="player in vm.players | filter: {confirmed: false } " ng-class="{ selected : player.confirmed}">
+  <md-list flex layout-wrap layout-gt-sm="row">
+    <md-list-item flex="33" class="md-3-line unselected" ng-repeat="player in vm.players | filter: {confirmed: false } " ng-class="{ selected : player.confirmed}" >
        <img ng-src="http://www.gravatar.com/avatar/11f1e85cd4b673a843d0365a50645b31" class="md-avatar" alt="jpp" />
         <div class="md-list-item-text" >
           <h3>{{player.user.local.name}} <md-chip>10</md-chip> </h3>
           <h4>{{player.user.local.email}}</h4>
-
         </div>
-          <md-switch ng-model="player.confirmed" ng-click="vm.update(player)" ng-if="vm.user.isAdmin || player.user.local.email == vm.user.username"></md-switch>
+          <md-switch ng-model="player.confirmed" ng-click="vm.canConfirm(player) && vm.update(player)" ng-show="vm.canConfirm(player)" ng-disabled="!vm.canConfirm(player)"  ></md-switch>
           <md-icon md-svg-src="assets/images/checkbox-marked-circle.svg" href="/facebook" ng-if="player.confirmed"></md-icon>
         </md-switch>
-    </md-list-item>    
+    </md-list-item>
     </md-list>
   </section>
   <!-- End Pendientes -->

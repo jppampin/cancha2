@@ -30,11 +30,16 @@
     vm.players = listService.players;
     vm.update = update;
     vm.user = userService.currentUser;
+    vm.canConfirm = canConfirm;
 
     function update(player){
       toastr.info('Player ' + player.name + ' UPDATED!' );
     };
-    
+
+    function canConfirm(player){
+      return vm.user.isAdmin || player.user.local.email == vm.user.username;
+    }
+
   };
 
 
