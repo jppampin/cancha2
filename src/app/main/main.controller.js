@@ -15,7 +15,9 @@
 
     function addPlayer()
     {
-      var player = { user : userService.currentUser, 'confirm' : false};
+      var name = userService.currentUser.name;
+      var email = userService.currentUser.email;
+      var player = { user : { local : { name : name, email : email} }, 'confirmed' : false};
       listService.addPlayer(player);
     };
 
