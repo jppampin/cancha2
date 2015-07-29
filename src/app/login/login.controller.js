@@ -15,8 +15,13 @@
     };
 
     vm.login = function () {
-      userService.login(vm.user.username, vm.user.password);
-      $state.go('main');
+      userService.login(vm.user.username, vm.user.password).then(function(){
+        $state.go('main');
+      })
+      .catch(function() {
+        toastr.error('No se pudo loguear user / password incorrectos!');
+      });
+      
     };
   }
 })();

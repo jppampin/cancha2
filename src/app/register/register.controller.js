@@ -6,20 +6,24 @@
     .controller('RegisterController', RegisterController);
 
   /** @ngInject */
-  function RegisterController(toastr, $state) {
+  function RegisterController(toastr, $state, userService) {
     var vm = this;
 
     vm.user = {
       name: '',
-      username: '',
       email : '',
       password: '',
       confirmPassword : '',
     };
 
     vm.register = function(user){
-      toastr.info('User ' + user.name + 'Registered!');
-      $state.go('main.login');
+      userService.signup(user).then(function(res){
+        toastr.info('Registered!');
+        $state.go('main.login');
+    }).catch(function(error) {
+      toastr.error('No se pudo registrar el usuario!');
+    })
+      
     };
   }
 })();
