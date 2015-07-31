@@ -33,7 +33,12 @@
     vm.canConfirm = canConfirm;
 
     function update(player){
-      toastr.info('Player ' + player.name + ' UPDATED!' );
+      listService.confirmPlayer(player).then(function  () {
+        toastr.info('Player ' + player.user.local.name + ' Actualizado!' );
+      }, function error (err) {
+        toastr.info('Error al actualizar!' + err );
+      })
+      
     };
 
     function canConfirm(player){

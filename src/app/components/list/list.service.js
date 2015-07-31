@@ -13,7 +13,8 @@
     var service = {
       matchId : null,
       players: players,
-      addPlayer : addPlayer
+      addPlayer : addPlayer, 
+      confirmPlayer : confirmPlayer
     };
 
     init();
@@ -47,6 +48,15 @@
         return players.push(player);        
       });
 
+    }
+
+    function confirmPlayer(player){
+      return $http({
+        method: 'POST',
+        url: '/api/match/' + service.matchId + '/confirmPlayer' ,
+        data: player,
+        headers: { 'Content-Type': 'application/json' }
+      });      
     }
 
   }

@@ -1,4 +1,4 @@
-<md-content layout="column" layout-padding >
+<md-content layout="column" >
   <md-toolbar flex >
      <div class="md-toolbar-tools">
     <h3>Lista de Inscriptos:</h3>
@@ -15,7 +15,7 @@
           <h4>{{player.user.local.email}}</h4>
 
         </div>
-          <md-switch ng-model="player.confirmed" ng-click="vm.canConfirm(player) && vm.update(player)" ng-show="vm.canConfirm(player)" ng-disabled="!vm.canConfirm(player)" ></md-switch>
+          <md-switch ng-model="player.confirmed" ng-change="vm.canConfirm(player) && vm.update(player)" ng-show="vm.canConfirm(player)" ng-disabled="!vm.canConfirm(player)" ></md-switch>
           <md-icon md-svg-src="assets/images/checkbox-marked-circle.svg" href="/facebook" ng-if="player.confirmed"></md-icon>
         </md-switch>
     </md-list-item>
@@ -32,7 +32,7 @@
           <h3>{{player.user.local.name}} <md-chip>10</md-chip> </h3>
           <h4>{{player.user.local.email}}</h4>
         </div>
-          <md-switch ng-model="player.confirmed" ng-click="vm.canConfirm(player) && vm.update(player)" ng-show="vm.canConfirm(player)" ng-disabled="!vm.canConfirm(player)"  ></md-switch>
+          <md-switch ng-model="player.confirmed" ng-change="vm.canConfirm(player) && vm.update(player)" ng-show="vm.canConfirm(player)" ng-disabled="!vm.canConfirm(player)"  ></md-switch>
           <md-icon md-svg-src="assets/images/checkbox-marked-circle.svg" href="/facebook" ng-if="player.confirmed"></md-icon>
         </md-switch>
     </md-list-item>
