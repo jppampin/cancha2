@@ -15,26 +15,26 @@
         controllerAs: 'main'
       })
       .state('main.login', {
-        url: '/login',
+        url: 'login',
         templateUrl: 'app/login/login.html',
         controller: 'LoginController',
         controllerAs: 'vm'
       })
 
       .state('main.forgotPassword', {
-        url: '/forgotPassword',
+        url: 'forgotPassword',
         templateUrl: 'app/forgotPassword/forgotPassword.html',
         controller: 'ForgotPasswordController',
         controllerAs: 'vm'
       })
       .state('main.admPartido', {
-        url: '/admPartido',
-        templateUrl: 'app/admPartido/admPartido.html',
-        controller: 'AdmPartidoController',
+        url: 'admPartido',
+        templateUrl: 'app/admPartido/match.html',
+        controller: 'MatchController',
         controllerAs: 'vm'
       })
       .state('main.register', {
-        url: '/register',
+        url: 'register',
         templateUrl: 'app/register/register.html',
         controller: 'RegisterController',
         controllerAs: 'vm'

@@ -6,7 +6,7 @@
     beforeEach(module('cancha2'));
 
     it('should exist the admPartido controller', inject(function($controller) {
-      var vm = $controller('AdmPartidoController');
+      var vm = $controller('MatchController');
 
       expect(vm).toBeTruthy();
     }));

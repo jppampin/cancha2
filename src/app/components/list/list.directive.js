@@ -31,6 +31,7 @@
     vm.update = update;
     vm.user = userService.currentUser;
     vm.canConfirm = canConfirm;
+    vm.title = listService.title;
 
     function update(player){
       listService.confirmPlayer(player).then(function  () {
