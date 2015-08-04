@@ -33,12 +33,12 @@
         data: paramUtils.serialize(loginInfo),
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
       }).then(function (res) {
-        var data = res.data;
-        service.currentUser.username = data.local.email;
-        service.currentUser.name = data.local.name;
-        service.currentUser.email = data.local.email;
+        var user = res.data;
+        service.currentUser.username = user.local.email;
+        service.currentUser.name = user.local.name;
+        service.currentUser.email = user.local.email;
         service.currentUser.isLogged = true;
-        service.currentUser.isAdmin = false;
+        service.currentUser.isAdmin = user.isAdmin;
       });
     };
 
@@ -47,6 +47,7 @@
       service.currentUser.name = anonumousUser.name;
       service.currentUser.email = anonumousUser.email;
       service.currentUser.isLogged = anonumousUser.isLogged;
+      service.currentUser.isAdmin = false;
     }
 
     function logout() {
