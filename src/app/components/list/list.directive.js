@@ -26,12 +26,16 @@
   /** @ngInject */
   function CanchaListController(toastr, listService, userService) {
     var vm = this;
-
-    vm.players = listService.players;
+    
     vm.update = update;
     vm.user = userService.currentUser;
     vm.canConfirm = canConfirm;
-    vm.title = listService.title;
+    vm.md5 = md5;
+
+    listService.init().then(function initialized () {
+      vm.title = listService.title;    
+      vm.players = listService.players;
+    })
 
     function update(player){
       listService.confirmPlayer(player).then(function  () {

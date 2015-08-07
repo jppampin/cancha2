@@ -15,23 +15,15 @@
       matchId : null,
       players: players,
       addPlayer : addPlayer, 
-      confirmPlayer : confirmPlayer
+      confirmPlayer : confirmPlayer,
+      init : init
     };
 
-    init();
 
     return service;
 
     function init(){
-      // matchApi.query().$promise.then(function(matches){
-      //   var match = matches[0];
-      //   service.matchId = match._id;
-      //   match.players.forEach(function(player){
-      //     service.players.push(player);
-      //   });
-      // });
-
-      $http({
+      return $http({
         method: 'GET',
         url: '/api/match/getLast' ,
         headers: { 'Content-Type': 'application/json' }

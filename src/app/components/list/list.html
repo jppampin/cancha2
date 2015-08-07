@@ -9,7 +9,7 @@
   <md-subheader class="md-primary">Confirmados:</md-subheader>
   <md-list flex layout-wrap layout-gt-sm="row">
     <md-list-item flex="33" class="md-3-line unselected" ng-repeat="player in vm.players | filter: {confirmed: true } " ng-class="{ selected : player.confirmed}">
-       <img ng-src="http://www.gravatar.com/avatar/11f1e85cd4b673a843d0365a50645b31" class="md-avatar" alt="jpp" />
+       <img ng-src="http://www.gravatar.com/avatar/{{vm.md5(player.user.local.email)}}" class="md-avatar" alt="jpp" />
         <div class="md-list-item-text" >
           <h3>{{player.user.local.name}} <md-chip>10</md-chip> </h3>
           <h4>{{player.user.local.email}}</h4>
@@ -27,7 +27,7 @@
   <md-subheader class="md-primary">Pendientes:</md-subheader>
   <md-list flex layout-wrap layout-gt-sm="row">
     <md-list-item flex="33" class="md-3-line unselected" ng-repeat="player in vm.players | filter: {confirmed: false } " ng-class="{ selected : player.confirmed}" >
-       <img ng-src="http://www.gravatar.com/avatar/11f1e85cd4b673a843d0365a50645b31" class="md-avatar" alt="jpp" />
+       <img ng-src="http://www.gravatar.com/avatar/{{vm.md5(player.user.local.email)}}" class="md-avatar" alt="jpp" />
         <div class="md-list-item-text" >
           <h3>{{player.user.local.name}} <md-chip>10</md-chip> </h3>
           <h4>{{player.user.local.email}}</h4>
@@ -43,6 +43,5 @@
   <div layout="row" layout-fill layout-align="center center">
       <disqus flex-gt-sm="50" ></disqus>
   </div>
-
 
 </md-content>
