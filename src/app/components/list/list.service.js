@@ -11,19 +11,25 @@
     var matchApi = $resource('/api/match');
 
     var service = {
+      title : '',
       matchId : null,
       players: players,
       addPlayer : addPlayer, 
-      confirmPlayer : confirmPlayer
+      confirmPlayer : confirmPlayer,
+      init : init
     };
 
-    init();
 
     return service;
 
     function init(){
-      matchApi.query().$promise.then(function(matches){
-        var match = matches[0];
+      return $http({
+        method: 'GET',
+        url: '/api/match/getLast' ,
+        headers: { 'Content-Type': 'application/json' }
+      }).then(function (res) {
+        var match = res.data;
+        service.title = match.title;
         service.matchId = match._id;
         match.players.forEach(function(player){
           service.players.push(player);
