@@ -1,5 +1,5 @@
 <div layout="row" layout-fill layout-align="center">
-  <md-card layout-padding flex="30" flex-sm>
+  <md-card layout-padding flex-gt-sm="30" >
     <form layout="column" name="loginForm">
       <md-input-container>
         <label>Email</label><input ng-model="vm.user.username" required />
@@ -12,15 +12,15 @@
       <div flex>
       <a ui-sref="main.register">Inscribirse</a>
       </div>
-      <div flex>
+      <!-- <div flex>
       <a ui-sref="main.forgotPassword">Olvidaste la password</a>
-      </div>
+      </div> -->
       </div>
         <md-button class="md-primary md-raised" ng-click="vm.login()" >Login</md-button>
-        or
+        <!-- or
         <md-button class="md-fab md-mini">
           <md-icon md-svg-src="assets/images/facebook.svg" href="/facebook"></md-icon>
-        </md-button>
+        </md-button> -->
     </form>
   </md-card>
 </div>
