@@ -21,13 +21,21 @@
     return directive;
 
     /** @ngInject */
-    function NavbarController(userService) {
+    function NavbarController(userService, $mdSidenav) {
       var vm = this;
 
       // "vm.creation" is avaible by directive option "bindToController: true"
       vm.logout = userService.logout;
       vm.user = userService.currentUser;
+      vm.toggleMenu = toggleMenu;
+      vm.md5 = md5;
+
+      function toggleMenu(){
+        $mdSidenav('menu').toggle();
+      }
     }
+
+
   }
 
 })();

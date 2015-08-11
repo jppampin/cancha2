@@ -1,17 +1,51 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="menu" >
+  <md-toolbar class="md-theme-indigo" layout="column">
+  <md-list-item class="md-toolbar-tools" layout="row">
+  <img ng-src="http://www.gravatar.com/avatar/{{vm.md5(vm.user.email)}}" class="md-avatar" alt="jpp" />
+    <h1>{{vm.user.name}}</h1>
+     <md-button class="md-icon-button" aria-label="Logout" ng-if="vm.user.isLogged" ng-click="vm.logout()" >
+      <md-icon md-svg-icon="assets/images/logout.svg" ></md-icon>
+    </md-button>
+    </md-list-item>
+  </md-toolbar>
+  <md-content layout-padding>
+    <md-list>
+      <md-list-item>
+        <md-button ui-sref="main" ng-click="vm.toggleMenu()" flex>Home</md-button>
+      </md-list-item>
+      <md-list-item>
+        <md-button ui-sref="main.login" ng-click="vm.toggleMenu()" flex>Login</md-button>
+      </md-list-item>
+      <md-list-item>
+        <md-button ui-sref="main.admPartido" ng-click="vm.toggleMenu()"  flex ng-if="vm.user.isAdmin">Adm. Partidos</md-button>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</md-sidenav>
+
 <md-toolbar layout="row" layout-align="center center">
   <section flex layout="row" layout-align="left center">
+  
+
+    <md-button class="md-icon-button" aria-label="Logout" ng-click="vm.toggleMenu()" >
+      <md-icon md-svg-icon="assets/images/menu.svg" ></md-icon>
+    </md-button>
+    <div class="md-toolbar-tools">
+      La cancha de tu Hermana 2.0
+    </div>
+<!-- 
     <md-tabs class="md-primary">
       <md-tab label="Home" ui-sref="main"></md-tab>
       <md-tab label="Login" ui-sref="main.login"></md-tab>
       <md-tab label="Adm. Partidos" ui-sref="main.admPartido" ng-if="vm.user.isAdmin"></md-tab>
     </md-tabs>
-    <!-- <md-button ui-sref="main" class="md-raised">Home</md-button>
+ -->    <!-- <md-button ui-sref="main" class="md-raised">Home</md-button>
     <md-button ui-sref="main.login" class="md-raised">Login</md-button>
     <md-button ui-sref="main.admPartido" class="md-raised">Adm. Partidos</md-button> -->
-    <div flex></div>
+<!--     <div flex></div>
     <div layout-padding>{{vm.user.name}}</div>
      <md-button class="md-icon-button" aria-label="Logout" ng-if="vm.user.isLogged" ng-click="vm.logout()" >
       <md-icon md-svg-icon="assets/images/logout.svg" ></md-icon>
-    </md-button>
+    </md-button> -->
   </section>
 </md-toolbar>
