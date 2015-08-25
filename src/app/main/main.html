@@ -4,10 +4,13 @@
     <header>
       <acme-navbar />
     </header>
-    <section class="jumbotron">
+<!--     <section class="jumbotron">
       <h1>La cancha de tu hermana</h1>
     </section>
-    <div ui-view></div>
+
+ --> 
+
+    <div ui-view layout="row"></div>
     <div layout="row" class="" layout-align="center center">
     <md-button class="md-raised md-warn md-hue-2" ng-click="main.addPlayer()" ng-if="main.user.isLogged">Agregarme al Partido</md-button>
     </div>
